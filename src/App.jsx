@@ -7,83 +7,124 @@ function App() {
   const { connected } = useConnection();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-900 text-white">
       <NavBar />
-      
       <Routes>
-        <Route path="/" element={
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
-              <h1 className="text-3xl font-bold mb-8">
-                Welcome to the "Zero to Arweave Starter Kit"
-              </h1>
-              
-              {connected ? (
-                <div className="mt-8 text-center">
-                  <h2 className="text-xl font-semibold mb-4">
-                    Connected Successfully! 🎉
-                  </h2>
-                </div>
-              ) : (
-                <p className="text-gray-600 mb-8">
-                  Connect your wallet to get started
+        <Route
+          path="/"
+          element={
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              {/* Blog Header */}
+              <header className="mb-12 text-center">
+                <h1 className="text-4xl font-bold mb-2">My Blog Title</h1>
+                <p className="text-lg text-gray-300">
+                  Insights, stories and updates on Arweave and decentralized tech.
                 </p>
+              </header>
+
+              {/* Wallet Connection Status (bağlıysa göster) */}
+              {connected && (
+                <div className="mb-8 text-center">
+                  <p className="text-xl text-green-400">Connected Successfully! 🎉</p>
+                </div>
               )}
 
-              <div className="mt-12">
-                <h2 className="text-2xl font-semibold mb-6 text-center">
-                  Powered by these amazing SDKs
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <a 
-                    href="https://docs.arweavekit.com/arweave-wallet-kit/introduction"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                  >
-                    <h3 className="text-xl font-semibold mb-3">Arweave Wallet Kit</h3>
-                    <p className="text-gray-600">
-                      Unified wallet interaction for Arweave applications
+              {/* Blog Posts Grid */}
+              <section className="grid gap-8 grid-cols-1 md:grid-cols-2">
+                {/* Blog Post 1 */}
+                <article className="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                  <div className="p-6">
+                    <h2 className="text-2xl font-semibold mb-2">Mirror Makale Başlığı 1</h2>
+                    <p className="text-gray-400 mb-4">
+                      Kısa bir özet: Makalenin içeriği hakkında bilgi...
                     </p>
-                  </a>
+                    <a
+                      href="https://mirror.xyz/vevivo.eth/vk5HYiNZNRiiSM_hP5dWUSwnex9Yrxm3-TMzolKWS1k?referrerAddress=0xa2aE6f0B2E8CC472c66905622ba244E58cB9813D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Makaleyi Oku
+                    </a>
+                  </div>
+                </article>
 
-                  <a 
-                    href="https://docs.ar.io/build/ar-io-sdk/getting-started"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                  >
-                    <h3 className="text-xl font-semibold mb-3">AR.IO SDK</h3>
-                    <p className="text-gray-600">
-                      Gateway and name system integration for Arweave
+                {/* Blog Post 2 */}
+                <article className="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                  <div className="p-6">
+                    <h2 className="text-2xl font-semibold mb-2">Mirror Makale Başlığı 2</h2>
+                    <p className="text-gray-400 mb-4">
+                      Kısa bir özet: Makalenin içeriği hakkında bilgi...
                     </p>
-                  </a>
+                    <a
+                      href="https://mirror.xyz/vevivo.eth/QnXB0Abst0kfKdAMgIBZFdJTkt3jJNfNZmsOiCBY2OU?referrerAddress=0xa2aE6f0B2E8CC472c66905622ba244E58cB9813D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Makaleyi Oku
+                    </a>
+                  </div>
+                </article>
 
-                  <a 
-                    href="https://docs.ardrive.io/docs/turbo/turbo-sdk/#installation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                  >
-                    <h3 className="text-xl font-semibold mb-3">Turbo SDK</h3>
-                    <p className="text-gray-600">
-                      Fast and efficient data uploads to Arweave
+                {/* Blog Post 3 */}
+                <article className="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                  <div className="p-6">
+                    <h2 className="text-2xl font-semibold mb-2">Mirror Makale Başlığı 3</h2>
+                    <p className="text-gray-400 mb-4">
+                      Kısa bir özet: Makalenin içeriği hakkında bilgi...
                     </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </main>
-        } />
-        <Route path="/dashboard" element={
-          connected ? (
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Dashboard content */}
+                    <a
+                      href="https://mirror.xyz/vevivo.eth/1JX8Nq4lYpo5Mdm9GlMsdlcJ3qnrqear4bpLkRlTROY?referrerAddress=0xa2aE6f0B2E8CC472c66905622ba244E58cB9813D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Makaleyi Oku
+                    </a>
+                  </div>
+                </article>
+
+                {/* Blog Post 4 */}
+                <article className="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                  <div className="p-6">
+                    <h2 className="text-2xl font-semibold mb-2">Mirror Makale Başlığı 4</h2>
+                    <p className="text-gray-400 mb-4">
+                      Kısa bir özet: Makalenin içeriği hakkında bilgi...
+                    </p>
+                    <a
+                      href="https://mirror.xyz/vevivo.eth/epAdf9liOpME9_s4nMFUyE4WrBolbcWo2RLXPSXdL28?referrerAddress=0xa2aE6f0B2E8CC472c66905622ba244E58cB9813D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Makaleyi Oku
+                    </a>
+                  </div>
+                </article>
+
+                {/* Blog Post 5 */}
+                <article className="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                  <div className="p-6">
+                    <h2 className="text-2xl font-semibold mb-2">Mirror Makale Başlığı 5</h2>
+                    <p className="text-gray-400 mb-4">
+                      Kısa bir özet: Makalenin içeriği hakkında bilgi...
+                    </p>
+                    <a
+                      href="https://mirror.xyz/vevivo.eth/gqhz4q9TsI4PjKCzYgsfmbJjsAUZ7Ji3xVd9mC-BYFs?referrerAddress=0xa2aE6f0B2E8CC472c66905622ba244E58cB9813D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Makaleyi Oku
+                    </a>
+                  </div>
+                </article>
+              </section>
             </main>
-          ) : (
-            <Navigate to="/" replace />
-          )
-        } />
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );
